@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap-icons.css">
+
+    <title>React</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+
+
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="/bootstrap.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        const SG1 = ["Jack O'neill", "Samantha Carter", "Daniel Jackson", "Teal'c"];
+
+        function Button(props) {
+            var textColor;
+            if (props.inverse) {
+                textColor = 'white';
+            } else {
+                textColor = 'black';
+            }
+            return <button style={{ backgroundColor: props.color, border: "none", padding: '0.5em', color: textColor }}>
+                {props.text}
+            </button>;
+        }
+
+        function Panel(props) {
+            var shadow;
+            if (props.shadow) {
+                shadow = '5px 5px 1px #eee';
+                console.log('true');
+            } else {
+                shadow = '';
+            }
+            return <div style={{ borderRadius: '0.7em', marginLeft: '2em', marginTop: '1em', display: 'inline-block', overflow: 'hidden', boxShadow: shadow}}>
+                {props.buttons.map((button, i) =>
+                    <Button key={i} text={button.text} color={button.color} inverse={button.inverse} />)}
+            </div>;
+        }
+
+        const buttons = [
+            { text: "add", color: "#eee" },
+            { text: "edit", color: "#eee" },
+            { text: "delete", color: "#FF5733", inverse: true }
+        ]
+
+        const buttons2 = [
+            { text: "a", color: "#34eb8f" },
+            { text: "b", color: "#1f8753", inverse: true },
+            { text: "c", color: "#34eb8f" },
+            { text: "d", color: "#1f8753", inverse: true },
+            { text: "e", color: "#34eb8f" }
+        ]
+
+        const buttons3 = [
+            { text: "info", color: "#349beb", inverse: true },
+        ]
+
+        root.render(
+            <>
+                <Panel shadow buttons={buttons} />
+                <Panel buttons={buttons} />
+                <Panel buttons={buttons2} />
+                <Panel buttons={buttons3} />
+                <Panel shadow buttons={buttons3} />
+            </>
+        );
+    </script>
+</body>
+
+</html>
