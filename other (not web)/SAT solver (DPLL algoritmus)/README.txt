@@ -1,0 +1,1 @@
+Otevřete DPLL.sln jako projekt ve visual studiu. V souboru "Formula.cs" na 21 řádku je nutno doplnit cestu k souboru dimacs.

@@ -1,0 +1,15 @@
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.csproj.AssemblyReference.cache
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.AssemblyInfoInputs.cache
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.AssemblyInfo.cs
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.csproj.CoreCompileInputs.cache
+C:\Users\stran\source\repos\DPLL\DPLL\bin\Debug\net6.0\DPLL.exe
+C:\Users\stran\source\repos\DPLL\DPLL\bin\Debug\net6.0\DPLL.deps.json
+C:\Users\stran\source\repos\DPLL\DPLL\bin\Debug\net6.0\DPLL.runtimeconfig.json
+C:\Users\stran\source\repos\DPLL\DPLL\bin\Debug\net6.0\DPLL.dll
+C:\Users\stran\source\repos\DPLL\DPLL\bin\Debug\net6.0\DPLL.pdb
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.dll
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\refint\DPLL.dll
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.pdb
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\DPLL.genruntimeconfig.cache
+C:\Users\stran\source\repos\DPLL\DPLL\obj\Debug\net6.0\ref\DPLL.dll

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TMAP_PROJECT.Views.EditItemPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Command="{Binding GoBackCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Title" FontSize="Large"/>
+            <Editor FontSize="Medium" Text="{Binding Title}"/>
+            <Label Text="Deadline" FontSize="Large"/>
+            <DatePicker Date="{Binding Deadline}" FontSize="Medium" MinimumDate="{x:Static sys:DateTime.Now}"/>
+            <TimePicker Time="{Binding Time}"/>
+            <Button BackgroundColor="{StaticResource Primary}" Text="Save" Command="{Binding SaveItemCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

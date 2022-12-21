@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TMAP_PROJECT.ViewModels" 
+             xmlns:model="clr-namespace:TMAP_PROJECT.Models"
+             x:Class="TMAP_PROJECT.Views.ItemsPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <RefreshView Margin="10" x:DataType="local:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5">
+                                <Grid Padding="10" x:DataType="model:Item">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    
+
+                                    <Label
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Text="{Binding Title}" 
+                                    LineBreakMode="NoWrap"
+                                    TextColor="Black"
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="19" />
+                                    <Label 
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    Text="{Binding Timeleft}" 
+                                    TextColor="{Binding Color}"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="17" />
+
+                                    <CheckBox Grid.Column="0" 
+                                          Color="{StaticResource Primary}"
+                                          Scale="1.5"
+                                          HorizontalOptions="Center"
+                                          VerticalOptions="Center" 
+                                          Grid.RowSpan="2" 
+                                          IsChecked="{Binding Done}"
+                                          CheckedChanged="CheckedChanged"/>
+                                    
+                                    <Grid.GestureRecognizers>
+
+                                        <TapGestureRecognizer 
+                                     NumberOfTapsRequired="1"
+                                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
+                                     CommandParameter="{Binding .}">
+                                        </TapGestureRecognizer>
+
+                                    </Grid.GestureRecognizers>
+                                    
+                                    
+                                </Grid>
+
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

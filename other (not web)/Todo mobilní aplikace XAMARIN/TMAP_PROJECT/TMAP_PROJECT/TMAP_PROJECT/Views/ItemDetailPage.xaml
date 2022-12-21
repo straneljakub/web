@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TMAP_PROJECT.Views.ItemDetailPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Command="{Binding GoBackCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Title" FontSize="Large"/>
+            <Label Text="{Binding Title}" FontSize="Medium"/>
+            <Label Text="Deadline" FontSize="Large"/>
+            <Label FontSize="Medium" Text="{Binding Deadline}"/>
+            <Button Text="Edit" Command="{Binding EditItemCommand}"></Button>
+            <Button Text="Delete" Command="{Binding DeleteItemCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
